@@ -324,6 +324,16 @@ html {
   }
 }
 
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll {
+  animation: scroll 2s infinite;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   h1 { font-size: 3rem; }
@@ -331,4 +341,21 @@ html {
   h3 { font-size: 2rem; }
   .section { padding: 4rem 0; }
   .container { padding: 0 1.5rem; }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
+  h1, h2, h3 {
+    word-break: break-word;
+  }
 }
