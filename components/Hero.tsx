@@ -107,31 +107,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/60 rounded-full mt-2 hover:bg-accent/60 transition-colors duration-300" />
         </div>
       </motion.div>
-
-      {/* Stats */}
-      <div className="absolute bottom-20 left-0 right-0 z-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: '15+', label: 'Años de Experiencia' },
-              { number: '200+', label: 'Proyectos Completados' },
-              { number: '50+', label: 'Profesionales' },
-              { number: '98%', label: 'Clientes Satisfechos' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.number}</div>
-                <div className="text-sm text-gray-300">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

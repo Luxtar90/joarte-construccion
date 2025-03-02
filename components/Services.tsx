@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHardHat, FaHome, FaPencilRuler, FaTools } from 'react-icons/fa';
+import { FaBuilding, FaHome, FaPaintRoller, FaTools } from 'react-icons/fa';
+import { FaHardHat, FaPencilRuler } from 'react-icons/fa';
 
 const services = [
   {
@@ -25,6 +26,13 @@ const services = [
   }
 ];
 
+const stats = [
+  { number: '15+', label: 'Años de Experiencia' },
+  { number: '200+', label: 'Proyectos Completados' },
+  { number: '50+', label: 'Profesionales' },
+  { number: '98%', label: 'Clientes Satisfechos' }
+];
+
 const Services = () => {
   return (
     <div className="relative py-24 bg-gradient-to-b from-background to-surface">
@@ -35,6 +43,23 @@ const Services = () => {
       </div>
 
       <div className="container mx-auto px-6">
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-accent/5 rounded-sm hover:bg-accent/10 transition-colors duration-300"
+            >
+              <div className="text-3xl md:text-4xl font-light text-accent mb-2">{stat.number}</div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
+            </motion.div>
+          ))}
+        </div>
+
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
